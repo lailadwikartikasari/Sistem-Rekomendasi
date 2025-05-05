@@ -2,53 +2,59 @@
 
 ## Project Overview
 
-Pada bagian ini, Kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-
+Netflix adalah salah satu platform streaming terbesar di dunia yang menawarkan ribuan judul film dan acara TV. Dengan banyaknya konten yang tersedia, pengguna seringkali kesulitan menemukan konten yang sesuai dengan preferensi mereka. Sistem rekomendasi yang efektif dapat membantu pengguna menemukan konten yang relevan, meningkatkan kepuasan pengguna, dan meningkatkan engagement di platform. Proyek ini bertujuan untuk membangun sistem rekomendasi berbasis konten untuk Netflix menggunakan dataset yang berisi informasi tentang film dan acara TV yang tersedia di platform tersebut.
 
 ## Business Understanding
 
-Pada bagian ini, Anda perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
 
 ### Problem Statements
 
-Menjelaskan pernyataan masalah:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+Pengguna Netflix seringkali kesulitan menemukan konten yang sesuai dengan preferensi mereka karena banyaknya pilihan yang tersedia.
 
 ### Goals
 
-Menjelaskan tujuan proyek yang menjawab pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
+Membangun sistem rekomendasi yang dapat menyarankan konten serupa berdasarkan deskripsi dan fitur lainnya.
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
+### Solution statements
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Approach” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
+solusi yang diterapkan pada pengerjaan proyek sistem rekomendasi kali ini yaitu dengan menerapkan algoritma **content based filtering** 
 
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution approach (algoritma atau pendekatan sistem rekomendasi).
+- ***content based filtering***.
+        pada tahap pengembangan model dengan model dengan metode content base filtering ini yaitu merekomendasikan item yang mirip dengan item yang disukai pengguna di masa lalu. Content-based filtering mempelajari profil minat pengguna baru berdasarkan data dari objek yang telah dinilai pengguna. Algoritma ini bekerja dengan menyarankan item serupa yang pernah disukai di masa lalu atau sedang dilihat di masa kini kepada pengguna. Semakin banyak informasi yang diberikan pengguna, semakin baik akurasi sistem rekomendasi.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
 
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+**Informasi Dataset** 
+Informasi   | Keterangan 
+----------- |------------------
+Link        | https://www.kaggle.com/datasets/anandshaw2001/netflix-movies-and-tv-shows
+Lisensi     | CC0: Public Domain
+Size        | 3.4 MB
 
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+**Exploratory Data Analysis (EDA) - Deskripsi Variabel**
+Dataset yang digunakan dalam proyek ini adalah "Netflix Movies and TV Shows" yang dapat diunduh dari Kaggle. Dataset [kaggle](https://www.kaggle.com/datasets/anandshaw2001/netflix-movies-and-tv-shows), terdapat 2 tipe data pada variabel-variabel netflix_titles dataset yaitu
+tipe data int :
+- *release_year* : Tahun judul tersebut pertama kali dirilis
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
+tipe data object.
+- *show_id* : Pengenal unik untuk setiap pertunjukan (s1, s2)
+- *type* : Menentukan apakah judulnya adalah "Film" atau "Acara TV"
+- *title* : Nama judul Netflix
+- *director* : Sutradara judulnya
+- *cast* : Aktor utama yang terlibat dalam judul
+- *country* : Negara tempat judul tersebut diproduksi
+- *date_added* : Tanggal saat judul ditambahkan ke Netflix
+- *rating* : Peringkat konten ("PG-13", "TV-MA")
+- *duration* : Durasi film (dalam menit) atau jumlah musim acara TV
+- *listed_in* : Kategori atau genre yang dicakup judul ("Dokumenter", "Drama TV")
+- *description* : Deskripsi ringkasan
+
+Dataset ini berisi 8807 entri dengan 12 fitur. Setelah dilakukan pembersihan data, fitur yang digunakan adalah:
+- *type* : Menentukan apakah judulnya adalah "Film" atau "Acara TV"
+- *title* : Nama judul Netflix
+- *rating* : Peringkat konten ("PG-13", "TV-MA")
+- *duration* : Durasi film (dalam menit) atau jumlah musim acara TV
+- *description* : Deskripsi ringkasan
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
