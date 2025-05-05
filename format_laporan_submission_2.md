@@ -82,9 +82,10 @@ Pada tahap pengembang model development pada studi kasus rekomendasi buku ini  m
 Model ini merekomendasikan konten berdasarkan kemiripan deskripsi menggunakan TF-IDF Vectorizer dan cosine similarity. Langkah-langkahnya:
 
 1. **TF-IDF Vectorizer**: Mengubah deskripsi menjadi vektor numerik.
-    - parameter : `````
+    - parameter : 
+    `````
     tf = TfidfVectorizer(max_df=0.8, min_df=0.02, ngram_range=(1,2))
-    ````
+    ```
     Keterangan : max_df=0.8: Mengabaikan istilah yang muncul di lebih dari 80% dokumen. min_df=0.02: Mengabaikan istilah yang muncul di kurang dari 2% dokumen. ngram_range=(1,2): Mempertimbangkan unigram dan bigram (kombinasi 1 dan 2 kata).
 2. **Cosine Similarity**: Menghitung kemiripan antara konten berdasarkan vektor deskripsi.
 
