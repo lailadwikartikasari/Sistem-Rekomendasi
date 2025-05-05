@@ -86,18 +86,21 @@ Model ini merekomendasikan konten berdasarkan kemiripan deskripsi menggunakan TF
     `````
     tf = TfidfVectorizer(max_df=0.8, min_df=0.02, ngram_range=(1,2))
     `````
-    
+
     Keterangan : max_df=0.8: Mengabaikan istilah yang muncul di lebih dari 80% dokumen. min_df=0.02: Mengabaikan istilah yang muncul di kurang dari 2% dokumen. ngram_range=(1,2): Mempertimbangkan unigram dan bigram (kombinasi 1 dan 2 kata).
+
 2. **Cosine Similarity**: Menghitung kemiripan antara konten berdasarkan vektor deskripsi.
+    - parameter :
+    `````
+    Cosine Similarity tidak memiliki parameter yang dapat diatur secara langsung. Ia menghitung kemiripan berdasarkan matriks TF-IDF yang telah dibuat sebelumnya.
+    `````
 
 ## Evaluation
-Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
+Metrik evaluasi yang digunakan adalah precision@k, yang mengukur proporsi rekomendasi yang relevan dari total rekomendasi yang diberikan. Formula:
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+- Jika dari 5 rekomendasi, 3 di antaranya relevan, maka precision@5 = 3/5 = 0.6.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
-
+Hasil evaluasi menunjukkan bahwa model content-based filtering dapat memberikan rekomendasi yang cukup relevan berdasarkan deskripsi konten. Namun, untuk meningkatkan akurasi, dapat dipertimbangkan penggunaan collaborative filtering atau hybrid approach.
 **---Ini adalah bagian akhir laporan---**
 
 ## Reverensi
