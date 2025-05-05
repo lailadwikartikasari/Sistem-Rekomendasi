@@ -36,6 +36,7 @@ Size        | 3.4 MB
 **Deskripsi Variabel**
 
 Dataset yang digunakan dalam proyek ini adalah "Netflix Movies and TV Shows" yang dapat diunduh dari Kaggle. Dataset [kaggle](https://www.kaggle.com/datasets/anandshaw2001/netflix-movies-and-tv-shows), terdapat 2 tipe data pada variabel-variabel netflix_titles dataset yaitu
+
 tipe data int :
 - *release_year* : Tahun judul tersebut pertama kali dirilis
 
@@ -60,18 +61,32 @@ Dataset ini berisi 8807 entri dengan 12 fitur. Setelah dilakukan pembersihan dat
 - *description* : Deskripsi ringkasan
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+ - **Mengecek Missing value**
+    Tujuannya dilakukan proses missing value agar dataset menjadi bersih dari fitur fitur yang valuenya kosong karena dapat menimbulkan hasil akurasi yang kurang baik ataupun hasil bias. untuk mengecek missing value menggunakan fitur *isnull* dan juga fitur *sum()* untuk melihat jumlah data.pada saat fitur itu dijalankan maka akan di cek semua data yang berisi missing value pada dataset. setelah dilakukan pengencekan missing valeu ternyata banyak data missing.sebelum menghapus missing value pada data. terlebih dahulu hapus fitur yang tidak akan di gunakan pada sistem rekomendasi. setelah fitur telah di hapus maka di lakukan penghapusan missing value pada data yang akan di gunakan untuk sistem rekomendasi.
+
+- **Membuat variabel preparation**
+    Membuat variabel preparation yang berisi dataframe netflix_clean kemudian mengurutkan berdasarkan title. kemudian membuang data duplikat pada variable preparation. karena akan menggunakan data unik untuk dimasukkan ke dalam proses pemodelan. pada proyek kali ini akan membuang duplikat data berdasarkan fitur title.
+
+- **Mengonversi data series menjadi dalam bentuk list**
+    konversi variable-variable seperti type, title, rating, duration dan description menjadi bentuk list
+
+- **Membuat dictionary pada data**
+    Tujuan pembuatan Dictionary ini agar model yang dibuat hanya memprediksi hasil dari fitur fitur yang hanya digunakan sebagai fitur untuk melakukan proses rekomendasi. pada proyek kali ini data ‘netflix_type’, ‘netflix_title’, ‘netflix_rating’, ‘netflix_duration’, dan ‘netflix_description’ akan dijadikan dictionary ‘netflix_clear’
 
 ## Modeling
-Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
+Pada tahap pengembang model development pada studi kasus rekomendasi buku ini  menerapkan metode content base filtering yaitu dimana dengan menerapkan metode ini diharapkan model mampu menghasilkan sebuah hasil rekemendasi berdasarkan hasil permasalahn yang ada. 
+- Kelemahan dari metode content-based filtering adalah terbatasnya rekomendasi hanya pada item-item yang mirip sehingga tidak ada kesempatan untuk mendapatkan item yang tidak terduga.
+- Kelebihan metode content-based filtering antara lain tidak memerlukan data pengguna lain sehingga cocok untuk pengguna baru, mampu memberikan rekomendasi yang spesifik dan relevan berdasarkan kemiripan fitur konten seperti deskripsi atau genre, serta memiliki transparansi tinggi karena alasan rekomendasi dapat dengan mudah dipahami. 
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
-- Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih.
+Model ini merekomendasikan konten berdasarkan kemiripan deskripsi menggunakan TF-IDF Vectorizer dan cosine similarity. Langkah-langkahnya:
+
+1. **TF-IDF Vectorizer**: Mengubah deskripsi menjadi vektor numerik.
+    - parameter : `````
+    tf = TfidfVectorizer(max_df=0.8, min_df=0.02, ngram_range=(1,2))
+    ````
+    Keterangan : max_df=0.8: Mengabaikan istilah yang muncul di lebih dari 80% dokumen. min_df=0.02: Mengabaikan istilah yang muncul di kurang dari 2% dokumen. ngram_range=(1,2): Mempertimbangkan unigram dan bigram (kombinasi 1 dan 2 kata).
+2. **Cosine Similarity**: Menghitung kemiripan antara konten berdasarkan vektor deskripsi.
 
 ## Evaluation
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
