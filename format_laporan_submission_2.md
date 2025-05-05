@@ -97,9 +97,11 @@ Model ini merekomendasikan konten berdasarkan kemiripan deskripsi menggunakan TF
 
 ## Evaluation
 Metrik evaluasi yang digunakan adalah precision@k, yang mengukur proporsi rekomendasi yang relevan dari total rekomendasi yang diberikan. Formula:
-
+![Gambar Evaluasi](https://user-images.githubusercontent.com/110774645/191220365-a77c874a-5b7c-4a58-9221-ea44d99cebcb.png)
 - Jika dari 5 rekomendasi, 3 di antaranya relevan, maka precision@5 = 3/5 = 0.6.
 
+Hasil Dari Evaluasi
+![recommender system precision](https://user-images.githubusercontent.com/110774645/191220365-a77c874a-5b7c-4a58-9221-ea44d99cebcb.png)
 Hasil evaluasi menunjukkan bahwa model content-based filtering dapat memberikan rekomendasi yang cukup relevan berdasarkan deskripsi konten. Namun, untuk meningkatkan akurasi, dapat dipertimbangkan penggunaan collaborative filtering atau hybrid approach.
 **---Ini adalah bagian akhir laporan---**
 
