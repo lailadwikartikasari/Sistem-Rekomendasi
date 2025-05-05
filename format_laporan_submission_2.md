@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Netflix adalah salah satu platform streaming terbesar di dunia yang menawarkan ribuan judul film dan acara TV. Dengan banyaknya konten yang tersedia, pengguna seringkali kesulitan menemukan konten yang sesuai dengan preferensi mereka. Sistem rekomendasi yang efektif dapat membantu pengguna menemukan konten yang relevan, meningkatkan kepuasan pengguna, dan meningkatkan engagement di platform. Proyek ini bertujuan untuk membangun sistem rekomendasi berbasis konten untuk Netflix menggunakan dataset yang berisi informasi tentang film dan acara TV yang tersedia di platform tersebut.
+Netflix adalah salah satu platform streaming terbesar di dunia yang menawarkan ribuan judul film dan acara TV. Dengan banyaknya konten yang tersedia, pengguna seringkali kesulitan menemukan konten yang sesuai dengan preferensi mereka. Sistem rekomendasi yang efektif dapat membantu pengguna menemukan konten yang relevan, meningkatkan kepuasan pengguna, dan meningkatkan engagement di platform [1](https://help.netflix.com/id/node/100639). Proyek ini bertujuan untuk membangun sistem rekomendasi berbasis konten untuk Netflix menggunakan dataset yang berisi informasi tentang film dan acara TV yang tersedia di platform tersebut.
 
 ## Business Understanding
 
@@ -97,14 +97,10 @@ Model ini merekomendasikan konten berdasarkan kemiripan deskripsi menggunakan TF
 
 ## Evaluation
 Metrik evaluasi yang digunakan adalah precision@k, yang mengukur proporsi rekomendasi yang relevan dari total rekomendasi yang diberikan. Formula:
-![Gambar Evaluasi](https://user-images.githubusercontent.com/110774645/191220365-a77c874a-5b7c-4a58-9221-ea44d99cebcb.png)
+![Gambar](https://github.com/lailadwikartikasari/Sistem-Rekomendasi/blob/main/image/2.png?raw=true)
 - Jika dari 5 rekomendasi, 3 di antaranya relevan, maka precision@5 = 3/5 = 0.6.
 
 Hasil Dari Evaluasi
-![recommender system precision](https://user-images.githubusercontent.com/110774645/191220365-a77c874a-5b7c-4a58-9221-ea44d99cebcb.png)
+![hasil evaluasi](https://github.com/lailadwikartikasari/Sistem-Rekomendasi/blob/main/image/1.png?raw=true)
 Hasil evaluasi menunjukkan bahwa model content-based filtering dapat memberikan rekomendasi yang cukup relevan berdasarkan deskripsi konten. Namun, untuk meningkatkan akurasi, dapat dipertimbangkan penggunaan collaborative filtering atau hybrid approach.
 **---Ini adalah bagian akhir laporan---**
-
-## Reverensi
-- Format Referensi dapat mengacu pada penulisan sitasi [IEEE](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf), [APA](https://www.mendeley.com/guides/apa-citation-guide/) atau secara umum seperti [di sini](https://penerbitdeepublish.com/menulis-buku-membuat-sitasi-dengan-mudah/)
-- Sumber yang bisa digunakan [Scholar](https://scholar.google.com/)
