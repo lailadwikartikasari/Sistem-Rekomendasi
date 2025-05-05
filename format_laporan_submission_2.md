@@ -103,4 +103,6 @@ Metrik evaluasi yang digunakan adalah precision@k, yang mengukur proporsi rekome
 Hasil Dari Evaluasi
 ![hasil evaluasi](https://github.com/lailadwikartikasari/Sistem-Rekomendasi/blob/main/image/1.png?raw=true)
 Hasil evaluasi menunjukkan bahwa model content-based filtering dapat memberikan rekomendasi yang cukup relevan berdasarkan deskripsi konten. Namun, untuk meningkatkan akurasi, dapat dipertimbangkan penggunaan collaborative filtering atau hybrid approach.
+
+
 **---Ini adalah bagian akhir laporan---**
