@@ -31,7 +31,9 @@ Link        | https://www.kaggle.com/datasets/anandshaw2001/netflix-movies-and-t
 Lisensi     | CC0: Public Domain
 Size        | 3.4 MB
 
-**Exploratory Data Analysis (EDA) - Deskripsi Variabel**
+**Exploratory Data Analysis (EDA) 
+
+- Deskripsi Variabel**
 Dataset yang digunakan dalam proyek ini adalah "Netflix Movies and TV Shows" yang dapat diunduh dari Kaggle. Dataset [kaggle](https://www.kaggle.com/datasets/anandshaw2001/netflix-movies-and-tv-shows), terdapat 2 tipe data pada variabel-variabel netflix_titles dataset yaitu
 tipe data int :
 - *release_year* : Tahun judul tersebut pertama kali dirilis
